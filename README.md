@@ -1,13 +1,5 @@
 # Optimized-IGCN
-Graph Convolutional Networks
-This is a TensorFlow implementation of Graph Convolutional Networks for the task of (semi-supervised) classification of nodes in a graph, as described in our paper:
-
-Thomas N. Kipf, Max Welling, Semi-Supervised Classification with Graph Convolutional Networks (ICLR 2017)
-
-For a high-level explanation, have a look at our blog post:
-
-Thomas Kipf, Graph Convolutional Networks (2016)
-
+This is a TensorFlow implementation of Graph Convolutional Networks
 Installation
 python setup.py install
 Requirements
@@ -31,13 +23,3 @@ You can specify a dataset as follows:
 python train.py --dataset citeseer
 (or by editing train.py)
 
-Models
-You can choose between the following models:
-
-gcn: Graph convolutional network (Thomas N. Kipf, Max Welling, Semi-Supervised Classification with Graph Convolutional Networks, 2016)
-gcn_cheby: Chebyshev polynomial version of graph convolutional network as described in (Michaël Defferrard, Xavier Bresson, Pierre Vandergheynst, Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering, NIPS 2016)
-dense: Basic multi-layer perceptron that supports sparse inputs
-Graph classification
-Our framework also supports batch-wise classification of multiple graph instances (of potentially different size) with an adjacency matrix each. It is best to concatenate respective feature matrices and build a (sparse) block-diagonal matrix where each block corresponds to the adjacency matrix of one graph instance. For pooling (in case of graph-level outputs as opposed to node-level outputs) it is best to specify a simple pooling matrix that collects features from their respective graph instances, as illustrated below:
-
-graph_classification
